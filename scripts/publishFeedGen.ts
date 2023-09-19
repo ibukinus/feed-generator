@@ -17,15 +17,15 @@ const run = async () => {
   // A short name for the record that will show in urls
   // Lowercase with no spaces.
   // Ex: whats-hot
-  const recordName = ''
+  const recordName = 'shiny-colors'
 
   // A display name for your feed
   // Ex: What's Hot
-  const displayName = ''
+  const displayName = 'アイドルマスター シャイニーカラーズ'
 
   // (Optional) A description of your feed
   // Ex: Top trending content from the whole network
-  const description = ''
+  const description = 'アイドルマスター シャイニーカラーズ（シャニマス）に関する話題を集めたfeedです'
 
   // (Optional) The path to an image to be used as your feed's avatar
   // Ex: ~/path/to/avatar.jpeg
