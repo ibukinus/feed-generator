@@ -9,11 +9,11 @@ export class ShinyColorsMatcher {
         const obj = JSON.parse(text)
         if ('rank1' in obj) {
             const keywords: string[] = obj.rank1
-            this.rank1 = new RegExp(keywords.join('|'))
+            this.rank1 = new RegExp(keywords.join('|'), 'i')
         }
         if ('rank2' in obj) {
             const keywords: string[] = obj.rank2
-            this.rank2 = new RegExp(keywords.join('|'))
+            this.rank2 = new RegExp(keywords.join('|'), 'gi')
         }
     }
 
@@ -22,7 +22,7 @@ export class ShinyColorsMatcher {
             return true
         }
 
-        const result = this.rank2.exec(text)
-        return result !== null && result.length >= 2
+        const result = text.match(this.rank2)
+        return result !== null && [... new Set(result.map(v => v.toLocaleLowerCase()))].length >= 2
     }
 }
